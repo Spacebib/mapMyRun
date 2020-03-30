@@ -24,7 +24,7 @@ class Workout
     public function collection($queryParams)
     {
         $path = 'workout';
-        if(!array_key_exists('user', $queryParams)) {
+        if (!array_key_exists('user', $queryParams)) {
             throw new InvalidQueryParams('[user] is required for getting workouts of the specified User');
         }
         $parameters['query'] = $queryParams;

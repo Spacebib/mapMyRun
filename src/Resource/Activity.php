@@ -2,7 +2,6 @@
 
 namespace Spacebib\MapMyRun\Resource;
 
-
 use Spacebib\MapMyRun\REST;
 
 class Activity
