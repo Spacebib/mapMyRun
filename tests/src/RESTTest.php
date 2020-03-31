@@ -2,7 +2,7 @@
 
 namespace Spacebib\MapMyRun\Tests;
 
-use Spacebib\MapMyRun\Resource\Activity;
+use Spacebib\MapMyRun\Resource\ActivityStory;
 use Spacebib\MapMyRun\REST;
 use PHPUnit_Framework_TestCase;
 
@@ -76,7 +76,7 @@ class RESTTest extends PHPUnit_Framework_TestCase
 
     public function testActivity()
     {
-        $this->assertInstanceOf(Activity::class, $this->rest->activity());
+        $this->assertInstanceOf(ActivityStory::class, $this->rest->activityStory());
     }
 
     function snoop($variableName, $mock, $targetObject)

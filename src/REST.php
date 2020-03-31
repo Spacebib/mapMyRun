@@ -2,9 +2,10 @@
 
 namespace Spacebib\MapMyRun;
 
-use Spacebib\MapMyRun\Resource\Activity;
+use Spacebib\MapMyRun\Resource\ActivityStory;
 use Exception;
 use GuzzleHttp\Client;
+use Spacebib\MapMyRun\Resource\User;
 use Spacebib\MapMyRun\Resource\Workout;
 
 class REST
@@ -80,14 +81,19 @@ class REST
         }
     }
 
-    public function activity()
+    public function activityStory()
     {
-        return (new Activity($this));
+        return (new ActivityStory($this));
     }
 
     public function workout()
     {
         return (new Workout($this));
+    }
+
+    public function user()
+    {
+        return (new User($this));
     }
 
     /**

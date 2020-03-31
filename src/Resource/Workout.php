@@ -3,31 +3,16 @@
 namespace Spacebib\MapMyRun\Resource;
 
 use Spacebib\MapMyRun\Resource\Exception\InvalidQueryParams;
-use Spacebib\MapMyRun\REST;
 
-class Workout
+class Workout extends AbstractResource
 {
-    /**
-     * @var REST
-     */
-    private $rest;
-
-    /**
-     * Activity constructor.
-     * @param REST $rest
-     */
-    public function __construct(REST $rest)
-    {
-        $this->rest = $rest;
-    }
-
-    public function collection($queryParams)
+    public function collection(array $params)
     {
         $path = 'workout';
-        if (!array_key_exists('user', $queryParams)) {
+        if (!array_key_exists('user', $params)) {
             throw new InvalidQueryParams('[user] is required for getting workouts of the specified User');
         }
-        $parameters['query'] = $queryParams;
+        $parameters['query'] = $params;
 
         return $this->rest->getResponse('GET', $path, $parameters);
     }
