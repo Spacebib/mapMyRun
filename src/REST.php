@@ -5,6 +5,7 @@ namespace Spacebib\MapMyRun;
 use Spacebib\MapMyRun\Resource\ActivityStory;
 use Exception;
 use GuzzleHttp\Client;
+use Spacebib\MapMyRun\Resource\Route;
 use Spacebib\MapMyRun\Resource\User;
 use Spacebib\MapMyRun\Resource\Workout;
 
@@ -94,6 +95,11 @@ class REST
     public function user()
     {
         return (new User($this));
+    }
+
+    public function route()
+    {
+        return (new Route($this));
     }
 
     /**
