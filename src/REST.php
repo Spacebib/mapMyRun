@@ -67,11 +67,11 @@ class REST
     public function getResponse($method, $path, $parameters = [])
     {
         $headers = [
-            'api-key' => $this->apiKey,
+            'Api-Key' => $this->apiKey,
             'authorization' => sprintf('Bearer %s', $this->getToken())
         ];
 
-        $options = array_merge($parameters, $headers);
+        $options = array_merge($parameters, compact('headers'));
 
         try {
             $response = $this->adapter->request($method, $path, $options);
