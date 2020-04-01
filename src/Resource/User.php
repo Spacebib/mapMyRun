@@ -2,7 +2,6 @@
 
 namespace Spacebib\MapMyRun\Resource;
 
-
 class User extends AbstractResource
 {
     public function collection(array $params)
@@ -14,13 +13,13 @@ class User extends AbstractResource
     {
         $path = "user/{$pk}/";
 
-        return $this->getResponse('GET', $path);
+        return $this->rest->getResponse('GET', $path);
     }
 
     public function self()
     {
         $path = 'user/self/';
 
-        return $this->getResponse('GET', $path);
+        return $this->rest->getResponse('GET', $path);
     }
 }
